@@ -37,6 +37,22 @@
 
 <body>
 
+  <div id="headerContainer"></div>
+
+  <!-- Header dosyasını çağırmak için JavaScript kullanımı -->
+  <script>
+    // XMLHttpRequest kullanarak header.html dosyasını çağırma
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'header.html', true);
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            // Çağrılan dosyanın içeriğini headerContainer içine yerleştirme
+            document.getElementById('headerContainer').innerHTML = xhr.responseText;
+        }
+    };
+    xhr.send();
+  </script>
+
   <div class="hero_area">
     <!-- header section strats -->
     
