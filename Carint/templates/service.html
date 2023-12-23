@@ -11,7 +11,7 @@
   <meta name="keywords" content="" />
   <meta name="description" content="" />
   <meta name="author" content="" />
-  <link rel="shortcut icon" href="images/fevicon.png" type="">
+  <link rel="shortcut icon" href="{{ url_for('static', filename='images/fevicon.png') }}" type="image/png">
 
   <title> Carint </title>
 
@@ -125,7 +125,7 @@
           <div class="col-md-6 ">
             <div class="box ">
               <div class="img-box">
-                <img src="images/s1.png" alt="">
+                <img src="{{ url_for('static', filename='images/s1.png') }}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -145,7 +145,7 @@
           <div class="col-md-6 ">
             <div class="box ">
               <div class="img-box">
-                <img src="images/s2.png" alt="">
+                <img src="{{ url_for('static', filename='images/s2.png') }}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -165,7 +165,7 @@
           <div class="col-md-6 ">
             <div class="box ">
               <div class="img-box">
-                <img src="images/s3.png" alt="">
+                <img src="{{ url_for('static', filename='images/s3.png') }}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -185,7 +185,7 @@
           <div class="col-md-6 ">
             <div class="box ">
               <div class="img-box">
-                <img src="images/s4.png" alt="">
+                <img src="{{ url_for('static', filename='images/s4.png') }}" alt="">
               </div>
               <div class="detail-box">
                 <h5>
@@ -272,20 +272,20 @@
             </h4>
             <div class="info_links">
               <a class="active" href="index.html">
-                <img src="images/nav-bullet.png" alt="">
+                <img src="{{ url_for('static', filename='images/bullet.png') }}" alt="">
                 Home
               </a>
               <a class="" href="about.html">
-                <img src="images/nav-bullet.png" alt="">
+                <img src="{{ url_for('static', filename='images/bullet.png') }}" alt="">
                 About
               </a>
               <a class="" href="service.html">
-                <img src="images/nav-bullet.png" alt="">
+                <img src="{{ url_for('static', filename='images/bullet.png') }}" alt="">
                 Services
               </a>
 
               <a class="" href="contact.html">
-                <img src="images/nav-bullet.png" alt="">
+                <img src="{{ url_for('static', filename='images/bullet.png') }}" alt="">
                 Contact Us
               </a>
             </div>

@@ -20,14 +20,18 @@
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/bootstrap.css') }}" />
 
   <!-- fonts style -->
-  <link href="{{ url_for('static', filename='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap') }}" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+  <!--<link href="{{ url_for('static', filename='https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap') }}" rel="stylesheet">-->
 
   <!--owl slider stylesheet -->
-  <!--<link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css') }}" />-->
   <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/owl.carousel.min.css') }}">
 
+  <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+  
   <!-- Owl Carousel JavaScript -->
-  <!--<script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>-->
+  <script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}"></script>
+  <!--<script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}">-->
 
   <!-- font awesome style -->
   <link href="{{ url_for('static', filename='css/font-awesome.min.css') }}" rel="stylesheet">
@@ -85,19 +89,24 @@
 
   <!-- jQery -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/jquery-3.4.1.min.js') }}"></script>
+
   <!-- popper js -->
-  <script src="{{ url_for('static', filename='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js') }}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">
+  <!--<script src="{{ url_for('static', filename='https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js') }}" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous">-->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+
   </script>
   <!-- bootstrap js -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/bootstrap.js') }}"></script>
   <!-- owl slider -->
-  <script type="text/javascript" src="{{ url_for('static', filename='https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js') }}">
+  <script type="text/javascript" src="{{ url_for('static', filename='js/owl.carousel.min.js') }}">
   </script>
   <!-- custom js -->
   <script type="text/javascript" src="{{ url_for('static', filename='js/custom.js') }}"></script>
   <!-- Google Map -->
-  <script src="{{ url_for('static', filename='https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap') }}">
-  </script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+
+  <!--<script src="{{ url_for('static', filename='https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap') }}">
+  </script>-->
   <!-- End Google Map -->
 
 </body>
