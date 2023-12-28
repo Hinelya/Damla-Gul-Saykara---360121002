@@ -1,0 +1,35 @@
+<!-- register.html -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- head bölümü -->
+</head>
+<body>
+    <main>
+        <div class="container">
+            <h2>Register</h2>
+
+            <form method="POST" action="{{ url_for('register') }}">
+                {{ form.hidden_tag() }}
+
+                <label for="username">Username:</label>
+                {{ form.username(class="form-control", placeholder="Enter your username") }}
+
+                <label for="email">Email:</label>
+                {{ form.email(class="form-control", placeholder="Enter your email") }}
+
+                <label for="password">Password:</label>
+                {{ form.password(class="form-control", placeholder="Enter your password") }}
+
+                <label for="confirm_password">Confirm Password:</label>
+                {{ form.confirm_password(class="form-control", placeholder="Confirm your password") }}
+
+                {{ form.submit(class="btn btn-primary") }}
+            </form>
+
+            <p>Already have an account? <a href="{{ url_for('login') }}">Login here</a>.</p>
+        </div>
+    </main>
+</body>
+</html>
