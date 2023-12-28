@@ -6,25 +6,30 @@ from flask_login import LoginManager, UserMixin, login_user, logout_user, login_
 from werkzeug.security import generate_password_hash, check_password_hash
 from flask import request, redirect, url_for, flash
 from forms import LoginForm, RegisterForm
+from flask_migrate import Migrate
+from models import User 
 
 app = Flask(__name__)
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SECRET_KEY'] = 'mysecret'
 
 db = SQLAlchemy(app)
+migrate = Migrate(app, db)
+
 login_manager = LoginManager(app)
 login_manager.login_view = 'login'
-class User(db.Model, UserMixin):
-    id = db.Column(db.Integer, primary_key=True)
-    username = db.Column(db.String(20), unique=True, nullable=False)
-    email = db.Column(db.String(120), unique=True, nullable=False)
-    password_hash = db.Column(db.String(128), nullable=False)
 
-    def set_password(self, password):
-        self.password_hash = generate_password_hash(password)
-
-    def check_password(self, password):
-        return check_password_hash(self.password_hash, password)
+#class User(db.Model, UserMixin):
+#    id = db.Column(db.Integer, primary_key=True)
+#    username = db.Column(db.String(20), unique=True, nullable=False)
+#    email = db.Column(db.String(120), unique=True, nullable=False)
+#    password_hash = db.Column(db.String(128), nullable=False)
+#
+#    def set_password(self, password):
+#        self.password_hash = generate_password_hash(password)
+#
+#    def check_password(self, password):
+#        return check_password_hash(self.password_hash, password)
 
 @login_manager.user_loader
 def load_user(user_id):
