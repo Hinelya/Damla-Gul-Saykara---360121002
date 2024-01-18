@@ -60,7 +60,7 @@
                 Email : demo@gmail.com
               </span>
             </a>
-            <a href="">
+            <a href="{{ url_for('contact') }}">
               <i class="fa fa-map-marker" aria-hidden="true"></i>
               <span>
                 Location
@@ -90,11 +90,11 @@
                 <li class="nav-item">
                   <a class="nav-link" href="{{ url_for('services') }}"> Service </a>
                 </li>
-                <li class="nav-item">
-                  <a class="nav-link" href="{{ url_for('about') }}"> About </a>
-                </li>
                 <li class="nav-item active">
-                  <a class="nav-link" href="{{ url_for('contact') }}"> Contact Us <span class="sr-only">(current)</span> </a>
+                  <a class="nav-link" href="{{ url_for('about') }}"> About <span class="sr-only">(current)</span> </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{{ url_for('contact') }}"> Contact Us </a>
                 </li>
                 {% if current_user.is_authenticated %}
                 <!-- Kullanıcı giriş yapmışsa Logout bağlantısı -->
@@ -121,53 +121,40 @@
     <!-- end header section -->
   </div>
 
-  <!-- contact section -->
-  <section class="contact_section layout_padding-top">
-    <div class="container-fluid">
+  <!-- about section -->
+
+  <section class="about_section layout_padding">
+    <div class="container  ">
       <div class="row">
-        <div class="col-lg-4 col-md-5 offset-md-1">
-          <div class="heading_container">
-            <h2>
-              Contact Us
-            </h2>
-          </div>
-        </div>
-      </div>
-      <div class="row">
-        <div class="col-lg-4 col-md-5 offset-md-1">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" placeholder="Your Name" />
-              </div>
-              <div>
-                <input type="text" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="email" placeholder="Email" />
-              </div>
-              <div>
-                <input type="text" class="message-box" placeholder="Message" />
-              </div>
-              <div class="btn_box">
-                <button>
-                  SEND
-                </button>
-              </div>
-            </form>
-          </div>
-        </div>
-        <div class="col-lg-7 col-md-6 px-0">
-          <div class="map_container">
-            <div class="map">
-              <div id="googleMap"></div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                About <span>Us</span>
+              </h2>
             </div>
+            <p>
+              There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
+              in some form, by injected humour, or randomised words which don't look even slightly believable. If you
+              are going to use a passage of Lorem Ipsum, you need to be sure there isn't anything embarrassing hidden in
+              the middle of text. 
+            </p>
+            <!--<a href="">
+              Read More
+            </a>-->
           </div>
         </div>
+        <div class="col-md-6 ">
+          <div class="img-box">
+            <img src="{{ url_for('static', filename='images/about-img.jpg') }}" alt="">
+          </div>
+        </div>
+
       </div>
     </div>
   </section>
-  <!-- end contact section -->
+
+  <!-- end about section -->
 
   <!-- info section -->
 
@@ -180,7 +167,7 @@
               Address
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="{{ url_for('contact') }}">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
                   Location
@@ -200,20 +187,20 @@
               </a>
             </div>
           </div>
-          <div class="info_social">
-            <a href="">
+          <!--<div class="info_social">
+            <a href="facebook.com">
               <i class="fa fa-facebook" aria-hidden="true"></i>
             </a>
-            <a href="">
+            <a href="twitter.com">
               <i class="fa fa-twitter" aria-hidden="true"></i>
             </a>
-            <a href="">
+            <a href="linkedin.com">
               <i class="fa fa-linkedin" aria-hidden="true"></i>
             </a>
-            <a href="">
+            <a href="instagram.com">
               <i class="fa fa-instagram" aria-hidden="true"></i>
             </a>
-          </div>
+          </div>-->
         </div>
         <div class="col-md-6 col-lg-3 info_col">
           <div class="info_detail">
@@ -231,20 +218,19 @@
               Links
             </h4>
             <div class="info_links">
-              <a class="active" href="index.html">
+              <a class="active" href="{{ url_for('home') }}"> 
                 <img src="{{ url_for('static', filename='images/nav-bullet.png') }}" alt="">
                 Home
               </a>
-              <a class="" href="about.html">
+              <a class="" href="{{ url_for('about') }}">
                 <img src="{{ url_for('static', filename='images/nav-bullet.png') }}" alt="">
                 About
               </a>
-              <a class="" href="service.html">
+              <a class="" href="{{ url_for('services') }}">
                 <img src="{{ url_for('static', filename='images/nav-bullet.png') }}" alt="">
                 Services
               </a>
-
-              <a class="" href="contact.html">
+              <a class="" href="{{ url_for('contact') }}">
                 <img src="{{ url_for('static', filename='images/nav-bullet.png') }}" alt="">
                 Contact Us
               </a>
