@@ -16,7 +16,7 @@ login_manager = LoginManager(app)
 admin = Admin(app)
 
 from app import views, models
-from app.models import User, Subscriber, Contact
+from app.models import User, Subscriber, Contact, Service
 
 class UserView(ModelView):
     column_searchable_list = ['username', 'email']
@@ -36,3 +36,8 @@ class ContactView(ModelView):
     column_searchable_list = ['name', 'email']
     form_columns = ['name', 'phone', 'email', 'message']
 admin.add_view(ContactView(Contact, db.session))
+
+class ServiceView(ModelView):
+    column_searchable_list = ['title', 'description']
+    form_columns = ['title', 'description']
+admin.add_view(ServiceView(Service, db.session))

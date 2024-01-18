@@ -10,88 +10,27 @@
                 There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration
               </p>
             </div>
-            <div class="row">
+            
+            <div class="row" id="service-list">
+              <!-- Servisler burada görüntülenecek -->
+              {% for service in services %}
               <div class="col-md-6 ">
                 <div class="box ">
                   <div class="img-box">
-                    <img src="{{ url_for('static', filename='images/s1.png') }}" alt="">
+                    <img src="{{ url_for('static', filename='images/tosbik.png') }}" alt="">
                   </div>
                   <div class="detail-box">
-                    <h5>
-                      Air Transport
-                    </h5>
-                    <p>
-                      fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                      The
-                      point of using
-                    </p>
+                    <h5>{{ service.title }}</h5>
+                    <p>{{ service.description }}</p>
                     <a href="{{ url_for('services') }}">
                       Read More
                     </a>
                   </div>
                 </div>
               </div>
-              <div class="col-md-6 ">
-                <div class="box ">
-                  <div class="img-box">
-                    <img src="{{ url_for('static', filename='images/s2.png') }}" alt="">
-                  </div>
-                  <div class="detail-box">
-                    <h5>
-                      Cargo Transport
-                    </h5>
-                    <p>
-                      fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                      The
-                      point of using
-                    </p>
-                    <a href="{{ url_for('services') }}">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 ">
-                <div class="box ">
-                  <div class="img-box">
-                    <img src="{{ url_for('static', filename='images/s3.png') }}" alt="">
-                  </div>
-                  <div class="detail-box">
-                    <h5>
-                      Trucks Transport
-                    </h5>
-                    <p>
-                      fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                      The
-                      point of using
-                    </p>
-                    <a href="{{ url_for('services') }}">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
-              <div class="col-md-6 ">
-                <div class="box ">
-                  <div class="img-box">
-                    <img src="{{ url_for('static', filename='images/s4.png') }}" alt="">
-                  </div>
-                  <div class="detail-box">
-                    <h5>
-                      Train Transport
-                    </h5>
-                    <p>
-                      fact that a reader will be distracted by the readable content of a page when looking at its layout.
-                      The
-                      point of using
-                    </p>
-                    <a href="{{ url_for('services') }}">
-                      Read More
-                    </a>
-                  </div>
-                </div>
-              </div>
+              {% endfor %}
             </div>
+                        
           </div>
         </div>
       </section>

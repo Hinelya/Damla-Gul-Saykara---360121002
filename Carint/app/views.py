@@ -4,15 +4,21 @@ from flask import render_template, redirect, url_for, request, flash
 from app import app, db
 from app.forms import LoginForm, RegisterForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Subscriber, Contact
+from app.models import User, Subscriber, Contact, Service
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    services = Service.query.all()
+
+    return render_template('index.html', services=services)
 
 @app.route('/services')
 def services():
-    return render_template('services.html')
+    # Tüm servisleri veritabanından al
+    services = Service.query.all()
+    
+    # services.html sayfasına servisleri iletecek şekilde render et
+    return render_template('services.html', services=services)
 
 @app.route('/about')
 def about():
