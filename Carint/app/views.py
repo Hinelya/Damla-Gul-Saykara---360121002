@@ -4,13 +4,13 @@ from flask import render_template, redirect, url_for, request, flash
 from app import app, db
 from app.forms import LoginForm, RegisterForm
 from flask_login import current_user, login_user, logout_user, login_required
-from app.models import User, Subscriber, Contact, Service
+from app.models import User, Subscriber, Contact, Service, Client
 
 @app.route('/')
 def home():
     services = Service.query.all()
-
-    return render_template('index.html', services=services)
+    clients = Client.query.all()
+    return render_template('index.html', services=services, clients = clients)
 
 @app.route('/services')
 def services():

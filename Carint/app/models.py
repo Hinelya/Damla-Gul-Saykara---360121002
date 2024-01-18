@@ -27,7 +27,6 @@ class Service(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     title = db.Column(db.String(100), nullable=False)
     description = db.Column(db.Text, nullable=False)
-    image = db.Column(db.String(255))
 
 class Contact(db.Model):
     id = db.Column(db.Integer, primary_key=True)
@@ -35,3 +34,8 @@ class Contact(db.Model):
     phone = db.Column(db.String(15), nullable=False)
     email = db.Column(db.String(120), nullable=False)
     message = db.Column(db.Text, nullable=False) 
+
+class Client(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    feedback = db.Column(db.Text, nullable=False)
+    name = db.Column(db.String(100), nullable=False)
